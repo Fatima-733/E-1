@@ -1,0 +1,39 @@
+def check_grade():
+    """
+    Asks the user for a score and prints the corresponding letter grade.
+    """
+    print("--- Simple Grade Checker ---")
+    
+    # 1. Get the score from the user
+    try:
+        score = float(input("Enter your percentage score (e.g., 85.5): "))
+    except ValueError:
+        print("Invalid input. Please enter a numerical score.")
+        return # Exit the function if input is invalid
+
+    # 2. Check the score and assign a letter grade
+    if score >= 90:
+        letter_grade = "A"
+        message = "Excellent work! You've earned an A."
+    elif score >= 80:
+        # 'elif' means "else if"
+        letter_grade = "B"
+        message = "Great job! You've earned a B."
+    elif score >= 70:
+        letter_grade = "C"
+        message = "Good effort! You've earned a C."
+    elif score >= 60:
+        letter_grade = "D"
+        message = "You passed, but keep working hard for a D."
+    else:
+        # 'else' runs if none of the above conditions were true
+        letter_grade = "F"
+        message = "You've earned an F. Time to study up!"
+
+    # 3. Print the final result and message
+    print("\n--- Result ---")
+    print(f"Your score of {score}% corresponds to a grade of **{letter_grade}**.")
+    print(message)
+
+# Run the function
+check_grade()
