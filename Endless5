@@ -1,0 +1,9 @@
+# Define the two numbers
+number1 = 15
+number2 = 7
+
+# Add the two numbers and store the result
+sum_of_numbers = number1 + number2
+
+# Print the final result
+print("The sum is:", sum_of_numbers)
