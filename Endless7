@@ -1,0 +1,44 @@
+import string
+from collections import Counter
+
+def word_frequency_counter(filepath):
+    """
+    Reads a file and returns a Counter object with the frequency of each word.
+    Punctuation is removed, and all words are converted to lowercase.
+    """
+    try:
+        with open(filepath, 'r') as file:
+            text_data = file.read()
+            
+            # 1. Clean the data: Convert to lowercase
+            text_data = text_data.lower()
+            
+            # 2. Clean the data: Remove punctuation
+            # Creates a translation table where every punctuation character 
+            # is mapped to None (effectively deleting it).
+            translator = str.maketrans('', '', string.punctuation)
+            clean_text = text_data.translate(translator)
+            
+            # 3. Split the text into a list of words
+            words = clean_text.split()
+            
+            # 4. Count the frequency of each word
+            word_counts = Counter(words)
+            
+            return word_counts
+            
+    except FileNotFoundError:
+        print(f"Error: File not found at path: {filepath}")
+        return None
+
+# --- Main Execution ---
+file_path = 'input.txt'
+counts = word_frequency_counter(file_path)
+
+if counts:
+    print(f"--- Word Frequency for '{file_path}' ---")
+    
+    # Print the top 5 most common words
+    print("Top 5 most common words:")
+    for word, count in counts.most_common(5):
+        print(f"  **{word}**: {count}")
