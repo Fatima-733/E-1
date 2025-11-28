@@ -1,0 +1,16 @@
+def factorial_recursive(n):
+    """
+    Calculates the factorial of a non-negative integer n using recursion.
+    e.g., factorial(5) is 5 * 4 * 3 * 2 * 1 = 120
+    """
+    if n == 0:
+        return 1  # Base case: Factorial of 0 is 1
+    else:
+        # Recursive step: n! = n * (n-1)!
+        return n * factorial_recursive(n - 1)
+
+# Example Usage
+number = 6
+result = factorial_recursive(number)
+
+print(f"The factorial of {number} is: {result}")
