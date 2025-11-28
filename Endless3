@@ -1,0 +1,10 @@
+# 1. Define a list of items (a sequence)
+fruits = ["apple", "banana", "cherry", "date"]
+
+# 2. Loop through each item in the 'fruits' list
+for fruit in fruits:
+    # 'fruit' will hold each item from the list in turn
+    print(f"I enjoy eating a {fruit}.")
+
+# 3. Add a message after the loop finishes
+print("\nThat's all the fruit in the list!")
