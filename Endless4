@@ -1,0 +1,18 @@
+# Initialize a variable
+number = 0
+
+print("--- Python Do-While Loop Emulation ---")
+
+# Start an infinite loop (the "DO" part)
+while True:
+    print(f"Current number: {number}")
+    
+    # Increment the number inside the loop
+    number += 1
+    
+    # Check the condition at the END of the loop (the "WHILE" part)
+    if number > 5:
+        # If the condition is met, use 'break' to exit the loop
+        break
+
+print("\nLoop finished! Number is now greater than 5.")
