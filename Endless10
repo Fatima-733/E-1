@@ -1,0 +1,39 @@
+def calculate_order_total(order_item, quantity):
+    """
+    Looks up the price of an item in the catalog and calculates the total cost.
+    """
+    
+    # 1. Define a dictionary (The Product Catalog)
+    product_prices = {
+        "apple": 0.50,
+        "banana": 0.25,
+        "orange": 0.75,
+        "kiwi": 1.00
+    }
+    
+    # Standardize the input key for reliable lookup
+    item = order_item.lower()
+    
+    # 2. Check if the item exists in the catalog (Conditional Logic)
+    if item in product_prices:
+        price_per_item = product_prices[item]
+        
+        # 3. Calculate the total
+        total_cost = price_per_item * quantity
+        
+        print(f"\nItem: **{order_item.capitalize()}**")
+        print(f"Price per item: ${price_per_item:.2f}")
+        print(f"Quantity ordered: {quantity}")
+        print(f"---")
+        print(f"**Total Cost: ${total_cost:.2f}**")
+        
+    else:
+        print(f"\nSorry, **{order_item}** is not in our catalog.")
+
+
+# --- Main Execution ---
+# Try an item that is in the dictionary
+calculate_order_total("Banana", 12)
+
+# Try an item that is NOT in the dictionary
+calculate_order_total("Grape", 5)
