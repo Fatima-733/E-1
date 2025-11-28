@@ -1,0 +1,9 @@
+Define the two numbers
+number1 = 10
+number2 = 5
+
+# Add the two numbers
+sum_of_numbers = number1 + number2
+
+# Print the result
+print(sum_of_numbers)
